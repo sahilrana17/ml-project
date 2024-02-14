@@ -1,0 +1,1 @@
+constant file -> code in configuration file -> data ingesion
