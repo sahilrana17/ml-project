@@ -8,7 +8,7 @@ from dataclasses import dataclass
 from src.logger import logging
 from src.exception import CustomException
 from src.components.data_transformation import DataTransformation, DataTransformationConfig
-
+from src.components.model_trainer import ModelTrainer
 
 @dataclass
 class DataIngestionConfig:
@@ -42,9 +42,18 @@ class DataIngestion:
 
 
 # Data Ingestion
-
+'''
 if __name__ == "__main__":
     obj = DataIngestion()
     train_data, test_data = obj.iniitiate_data_ingestion()
     data_transformation = DataTransformation()
     train_arr,test_arr,_ = data_transformation.inititate_data_transformation(train_data,test_data)
+'''
+# Model Training
+if __name__ == "__main__":
+    obj = DataIngestion()
+    train_data, test_data = obj.iniitiate_data_ingestion()
+    data_transformation = DataTransformation()
+    train_arr,test_arr,_ = data_transformation.inititate_data_transformation(train_data,test_data)
+    model_trainer = ModelTrainer()
+    print(model_trainer.initiate_model_training(train_arr,test_arr))
